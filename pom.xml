@@ -3,17 +3,97 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!--阅读类门户网站-->
+
     <groupId>springboot-duing</groupId>
     <artifactId>read</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <description>阅读类门户网站项目练习</description>
 
-    <dependencies>
-        <!--epublib-->
+    <!--spring-boot父级-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.3</version>
+    </parent>
+
+   <dependencies>
+       <!--声明是web应用-->
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-web</artifactId>
+       </dependency>
+
+       <!--模板  thymeleaf-->
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-thymeleaf</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-test</artifactId>
+       </dependency>
+
+        <!--lombok-->
+       <dependency>
+           <groupId>org.projectlombok</groupId>
+           <artifactId>lombok</artifactId>
+           <version>1.18.22</version>
+           <scope>provided</scope>
+       </dependency>
+
+       <!--mysql-->
+       <dependency>
+           <groupId>mysql</groupId>
+           <artifactId>mysql-connector-java</artifactId>
+           <scope>runtime</scope>
+       </dependency>
+
+       <!--mybatis-->
+       <dependency>
+           <groupId>org.mybatis.spring.boot</groupId>
+           <artifactId>mybatis-spring-boot-starter</artifactId>
+           <version>2.2.2</version>
+       </dependency>
+
+       <!--将数据库中的表在idea中自动生成对应的Java类-->
+       <dependency>
+           <groupId>org.mybatis.generator</groupId>
+           <artifactId>mybatis-generator-core</artifactId>
+           <version>1.4.0</version>
+       </dependency>
+
+       <!--mybatis-plus 已经生成好的crud方法  不用手动写sql-->
+       <dependency>
+           <groupId>com.baomidou</groupId>
+           <artifactId>mybatis-plus-boot-starter</artifactId>
+           <version>3.5.1</version>
+       </dependency>
+
+
+        <!--epublib epub工具库-->
+        <!-- https://mvnrepository.com/artifact/com.positiondev.epublib/epublib-core -->
         <dependency>
             <groupId>com.positiondev.epublib</groupId>
             <artifactId>epublib-core</artifactId>
             <version>3.1</version>
         </dependency>
+
+        <!--HtppClient  可以通过链接发送请求和读取响应信息-->
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.13</version>
+        </dependency>
+
+        <!--jsoup  解析HTML内容  便于提取-->
+        <dependency>
+            <!-- jsoup HTML parser library @ https://jsoup.org/ -->
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.14.3</version>
+        </dependency>
     </dependencies>
+
 </project>
