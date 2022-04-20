@@ -18,7 +18,7 @@ public class Book  implements Serializable {
     //作者
     private String author;
     //作者id
-    private Long authorid;
+    private Long authorId;
     //作品介绍
     private String description;
     //字数

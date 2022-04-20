@@ -20,9 +20,11 @@
 
         <!--        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="example.mapper" targetProject="src/main/java"/>-->
 
-                <table tableName="chapter"/>
+               <!-- <table tableName="chapter"/>
                 <table tableName="chapter_content"/>
-                <table tableName="book"/>
+                <table tableName="book"/>-->
+
+                <table tableName="author"/>
 
        <!-- <table tableName="book_shelf"/>-->
       <!--  <table tableName="book_read"/>-->

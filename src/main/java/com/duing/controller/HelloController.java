@@ -46,7 +46,7 @@ public class HelloController {
         Book book = new Book();
         book.setName("明克街13号");
         book.setAuthor("纯洁滴小龙");
-        book.setAuthorid(null);
+        book.setAuthorId(null);
         book.setCount(1794200);
         book.setDescription("我喜欢坐在夜晚空无一人的大街上，听着“他们”的窃窃私语，享受着“他们”的喧嚣。");
         book.setStatus(1);
