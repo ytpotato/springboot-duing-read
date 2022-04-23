@@ -94,6 +94,33 @@
             <artifactId>jsoup</artifactId>
             <version>1.14.3</version>
         </dependency>
+
+       <!--jedis:客户端连接redis（底层用java写的）-->
+       <dependency>
+           <groupId>redis.clients</groupId>
+           <artifactId>jedis</artifactId>
+           <version>3.2.0</version>
+       </dependency>
+
+       <!--redis 在启动器中包含Lettuce，redis客户端-->
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-data-redis</artifactId>
+       </dependency>
+
+       <!--序列化工具-->
+       <dependency>
+           <groupId>com.alibaba</groupId>
+           <artifactId>fastjson</artifactId>
+           <version>1.2.74</version>
+       </dependency>
+
+       <!--redis连接池-->
+       <dependency>
+           <groupId>org.apache.commons</groupId>
+           <artifactId>commons-pool2</artifactId>
+       </dependency>
+
     </dependencies>
 
 </project>

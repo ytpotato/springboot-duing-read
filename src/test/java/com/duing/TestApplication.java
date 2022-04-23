@@ -1,10 +1,14 @@
 package com.duing;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.duing.entity.Author;
+import com.duing.entity.User;
 import com.duing.entity.vo.GroupBean;
 import com.duing.mapper.UserMapper;
 import com.duing.service.AuthorService;
+import com.duing.service.UserService;
+import com.duing.util.RedisUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -52,6 +56,28 @@ public class TestApplication {
     public void test(){
        List<GroupBean> list = userMapper.groupByUser();
         System.out.println(list);
+    }
+
+    @Autowired
+    private UserService userService;
+    @Test
+    public void page(){
+        Page<User> userPage = new Page<>(0,2);
+        Page<User> page = userService.page(userPage);
+
+        System.out.println(page == userPage);
+
+        List<User> userList = page.getRecords();
+        System.out.println(userList);
+    }
+
+    @Autowired
+    private RedisUtil redisUtil;
+    @Test
+    public void redis(){
+//        redisUtil.set("yu","18");
+        String value = (String) redisUtil.get("yu");
+        System.out.println(value);
     }
 
 }
